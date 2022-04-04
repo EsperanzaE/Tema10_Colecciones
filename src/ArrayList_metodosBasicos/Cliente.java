@@ -1,6 +1,6 @@
 package ArrayList_metodosBasicos;
 
-public class Cliente implements Comparable {
+public class Cliente implements Comparable<Cliente> {
     private String dni;
     private String nombre;
     private int edad;
@@ -10,6 +10,18 @@ public class Cliente implements Comparable {
         this.dni = dni;
         this.nombre = nombre;
         this.edad = edad;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
     }
 
     // reescribo el método to String
@@ -37,7 +49,7 @@ public class Cliente implements Comparable {
     }
 
 
-   @Override
+   /*@Override
     public int compareTo(Object object) {
         int rtdo=0;
         if (this == object){
@@ -50,4 +62,9 @@ public class Cliente implements Comparable {
             }
         return rtdo;
         }
+*/
+    public int compareTo(Cliente object) {
+        return  this.dni.compareTo(object.dni);
+
+    }
 }
